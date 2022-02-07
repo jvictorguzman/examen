@@ -5,6 +5,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
+import static spark.Spark.get;
+import static spark.Spark.port;
+
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -17,6 +20,7 @@ public class App
 {
     public static void main( String[] args ) throws Exception
     {
+        port(3456);
         System.out.println( "Convirtiendo objeto a JSON..." );
         Properties properties = new Properties();
         properties.load(App.class.getClassLoader().getResourceAsStream("vars.properties"));        
